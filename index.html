@@ -37,26 +37,26 @@
                     <input type="range"
                             min="1"
                             max="20"
-                            value="1"
+                            value="10"
                             class="input_range"
                             name="volume">
                            
                 </div>
                 <div class="pass-combo-container">
                     <div class="upper-case checkbox">
-                        <input type="checkbox" name="upper-case" class="check_box">
+                        <input type="checkbox" name="upper-case" id="upper-case" class="check_box">
                         <label for="upper-case">Include Uppercase letters</label>
                     </div>
                     <div class="lower-case checkbox">
-                        <input type="checkbox" name="lower-case" class="check_box">
+                        <input type="checkbox" name="lower-case" id="lower-case" class="check_box">
                         <label for="lower-case">Include Lowercase letters</label>
                     </div>
                     <div class="symbols checkbox">
-                        <input type="checkbox" name="symbols" class="check_box">
+                        <input type="checkbox" name="symbols" id="symbols" class="check_box">
                         <label for="symbols">Include Symbols</label>
                     </div>
                     <div class="numbers checkbox">
-                        <input type="checkbox" name="numbers" class="check_box">
+                        <input type="checkbox" name="numbers" id="numbers" class="check_box">
                         <label for="numbers">Include Numbers</label>
                     </div>
                 </div>
@@ -75,5 +75,9 @@
         
             
     </div>
+
+
+
+    <script src="./script.js"></script>
 </body>
 </html>
