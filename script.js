@@ -6,9 +6,14 @@ const upper_checkbox=document.querySelector('#upper-case');
 const lower_checkbox=document.querySelector('#lower-case');
 const strength_color_div=document.querySelector(".strength-color");
 const pass_gen_button=document.querySelector('.generate-container');
+const pass_show=document.querySelector('.pass-show');
+const copy=document.querySelector('.copy');
+const copy_img=document.querySelector('.imageOfCopy');
+
 
 let symbol_string="!~`#$%^&*()_-+=}{[]<,>.?/|";
-
+//setting initial color
+strength_indicator("#ccc")
 //all id selector array
 let check_arr=[num_checkbox,symb_checkbox,upper_checkbox,lower_checkbox];
 
@@ -23,6 +28,8 @@ let check_count=0;
 
 //the final password
 let password="";
+handle_passlength();
+// function 
 
 function handle_passlength(){
     pass_len.innerHTML=password_length;
@@ -132,7 +139,9 @@ function getsymbol()
     return symbol_string[num];
 
 }
-
+function show_password(){
+    pass_show.innerHTML=password;
+}
 
 function generate_pass_fun()
 {
@@ -170,10 +179,29 @@ function generate_pass_fun()
 
 
         console.log(password);
+        calc_strength();
+        show_password();
    
 
 }
 
 
 pass_gen_button.addEventListener('click',generate_pass_fun);
+
+
+async function copy_content(){
+    if(password.length==0)return;
+    console.log(password);
+    try{
+        await navigator.clipboard.writeText(password);
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+  
+    console.log(pass_show.value);
+}
+
+copy.addEventListener('click',copy_content);
 
